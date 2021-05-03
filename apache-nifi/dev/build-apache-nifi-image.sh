@@ -14,6 +14,22 @@
 # limitations under the License.
 
 #!/bin/bash
+DOCKER_UID=1000
+if [ -n "$1" ]; then
+  DOCKER_UID="$1"
+fi
+
+DOCKER_GID=1000
+if [ -n "$2" ]; then
+  DOCKER_GID="$2"
+fi
+
+MIRROR=https://archive.apache.org/dist
+if [ -n "$3" ]; then
+  MIRROR="$3"
+fi
+
 DOCKER_IMAGE="apache/nifi:1.13.2"
-echo "Running Docker Image: $DOCKER_IMAGE"
-sudo docker run -it -d -p 8080:8080 -p 8181:8181 --network hadoop --name nifi $DOCKER_IMAGE
+NIFI_IMAGE_VERSION="$(echo $DOCKER_IMAGE | cut -d : -f 2)"
+echo "Building NiFi Image: '$DOCKER_IMAGE' Version: $NIFI_IMAGE_VERSION Mirror: $MIRROR"
+sudo docker build --build-arg UID="$DOCKER_UID" --build-arg GID="$DOCKER_GID" --build-arg NIFI_VERSION="$NIFI_IMAGE_VERSION" --build-arg MIRROR="$MIRROR" -t $DOCKER_IMAGE ./apache-nifi/

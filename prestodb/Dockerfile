@@ -15,8 +15,10 @@ RUN wget --quiet ${PRESTO_BIN}
 RUN mkdir -p /opt
 RUN tar -xf presto-server-${PRESTO_VERSION}.tar.gz -C /opt
 RUN rm presto-server-${PRESTO_VERSION}.tar.gz
-COPY ./conf/etc /opt/presto/etc
 RUN ln -s /opt/presto-server-${PRESTO_VERSION} /opt/presto
+
+# Copy configuration files on the host into the image
+COPY conf/etc /opt/presto/etc/
 
 # Download the Presto CLI and put it in the image
 RUN wget --quiet https://repo1.maven.org/maven2/com/facebook/presto/presto-cli/${PRESTO_VERSION}/presto-cli-${PRESTO_VERSION}-executable.jar

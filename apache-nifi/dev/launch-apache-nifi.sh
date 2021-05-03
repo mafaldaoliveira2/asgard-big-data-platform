@@ -14,6 +14,6 @@
 # limitations under the License.
 
 #!/bin/bash
-DOCKER_IMAGE="apache/nifi:1.13.2"
+DOCKER_IMAGE="asgard/nifi:1.13.2"
 echo "Running Docker Image: $DOCKER_IMAGE"
 sudo docker run -it -d -p 8080:8080 -p 8181:8181 --network hadoop --name nifi $DOCKER_IMAGE

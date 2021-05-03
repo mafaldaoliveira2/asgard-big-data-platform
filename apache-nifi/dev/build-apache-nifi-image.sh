@@ -29,7 +29,7 @@ if [ -n "$3" ]; then
   MIRROR="$3"
 fi
 
-DOCKER_IMAGE="apache/nifi:1.13.2"
+DOCKER_IMAGE="asgard/nifi:1.13.2"
 NIFI_IMAGE_VERSION="$(echo $DOCKER_IMAGE | cut -d : -f 2)"
 echo "Building NiFi Image: '$DOCKER_IMAGE' Version: $NIFI_IMAGE_VERSION Mirror: $MIRROR"
 sudo docker build --build-arg UID="$DOCKER_UID" --build-arg GID="$DOCKER_GID" --build-arg NIFI_VERSION="$NIFI_IMAGE_VERSION" --build-arg MIRROR="$MIRROR" -t $DOCKER_IMAGE ./apache-nifi/

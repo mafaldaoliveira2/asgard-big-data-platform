@@ -126,9 +126,40 @@ chmod -R +x ./hue/dev
 ### Hue UI
 - [http://127.0.0.1:8887/](http://127.0.0.1:8887/)
 
+## Apache Hive
+> Facilitates reading, writing, and managing large datasets residing in distributed storage using SQL.
+
+![](https://media.geeksforgeeks.org/wp-content/uploads/20201106121050/createtablestudent.png)
+
+Apache Hive is an open source data warehouse built on top of Apache Hadoop, and designed to maximize scalability, performance, extensibility, fault-tolerance, and loose-coupling with its input formats.
+
+Apache Hive provides the following features:
+- Easy access to data via SQL, enabling data warehousing tasks such as extract/transform/load (ETL), reporting, and data analysis
+- Imposed structure on a variety of data formats
+- Access to files stored directly in Apache HDFS or in other data storage systems such as Apache HBase
+- Query execution via Apache Tez, Apache Spark, or MapReduce
+- Procedural language with HPL-SQL
+- Sub-second query retrieval via Hive LLAP, Apache YARN, and Apache Slider
+
+Regarding this project, Apache Hive can be accessed through Jupyter, Hue or its container's CLI.
+
+You can check the [Hive Getting Started Guide](https://cwiki.apache.org/confluence/display/Hive/GettingStarted), their [wiki](https://cwiki.apache.org/confluence/display/Hive/Home) where you can find all available documentation, or their [GitHub repository](https://github.com/apache/hive).
+
+### Setting Up
+**In the *Asgard Big Data Platform* project root:**
+
+```bash
+# Give execute permission to dev folder of Hive
+chmod -R +x hive/dev/
+# Build Docker Images for Hive Metastore
+./hive/dev/build-all-images.sh
+# Launch Hive Metastore Containers. This will create a Hive Thrift Server and a MySQL server
+./hive/dev/launch-hive-metastore.sh
+```
+
 ## Contributors
 <ul>
-    <li><a href=""><strong>Diogo Rodrigues</strong></a></li>
+    <li><a href="https://github.com/a84820"><strong>Diogo Rodrigues</strong></a></li>
 <br />
 <li><a href="https://github.com/hugodscarvalho"><strong>Hugo Carvalho</strong></a></li>
 <br />

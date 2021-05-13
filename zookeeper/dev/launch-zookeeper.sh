@@ -1,0 +1,1 @@
+docker run --network=hadoop --rm --detach --name zookeeper -e ZOOKEEPER_CLIENT_PORT=2181 confluentinc/cp-zookeeper:5.5.0

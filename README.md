@@ -77,7 +77,7 @@ chmod -R +x ./apache-nifi/dev
 ## HDFS
 > Is a distributed file system designed to run on commodity hardware
 
-![](https://datacadamia.com/_media/db/hadoop/hdfs/hdfs_namenode_ui.png?w=600&tok=852869)
+![](https://i1.wp.com/hadooptutorial.info/wp-content/uploads/2014/04/HDFS-Web-UI-1.png?w=1301)
 
 HDFS has many similarities with existing distributed file systems. However, the differences from other distributed file systems are significant. HDFS is highly fault-tolerant and is designed to be deployed on low-cost hardware. It provides high throughput access to application data and is suitable for applications that have large data sets. HDFS relaxes a few POSIX requirements to enable streaming access to file system data.
 
@@ -94,7 +94,7 @@ hadoop/dev/build-all-images.sh
 hadoop/dev/launch-single-node-cluster.sh
 ```
 
-### Apache NiFi UI
+### HDFS UI
 - [http://127.0.0.1:9870/](http://127.0.0.1:9870/)
 
 ## Presto

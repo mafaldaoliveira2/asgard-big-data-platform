@@ -73,6 +73,30 @@ chmod -R +x ./apache-nifi/dev
 ### Apache NiFi UI
 - [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
 
+
+## HDFS
+> Is a distributed file system designed to run on commodity hardware
+
+![](https://datacadamia.com/_media/db/hadoop/hdfs/hdfs_namenode_ui.png?w=600&tok=852869)
+
+HDFS has many similarities with existing distributed file systems. However, the differences from other distributed file systems are significant. HDFS is highly fault-tolerant and is designed to be deployed on low-cost hardware. It provides high throughput access to application data and is suitable for applications that have large data sets. HDFS relaxes a few POSIX requirements to enable streaming access to file system data.
+
+You can check the [HDFS docs](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.html) 
+### Setting Up
+**In the *Asgard Big Data Platform* project root:**
+
+```bash
+# Give execute permission to dev folder of hadoop
+chmod -R +x hadoop/dev/
+# Build hadoop customized image
+hadoop/dev/build-all-images.sh
+# Launch previous hadoop customized built image 
+hadoop/dev/launch-single-node-cluster.sh
+```
+
+### Apache NiFi UI
+- [http://127.0.0.1:9870/](http://127.0.0.1:9870/)
+
 ## Presto
 > Enables analytics on large amounts of data.
 

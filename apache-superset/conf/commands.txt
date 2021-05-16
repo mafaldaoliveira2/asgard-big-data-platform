@@ -1,0 +1,14 @@
+1) docker exec -it superset superset fab create-admin \
+               --username admin \
+               --firstname Superset \
+               --lastname Admin \
+               --email admin@superset.com \
+               --password admin
+
+2) docker exec -it superset superset db upgrade
+
+[OPTIONAL]
+3) docker exec -it superset superset load_examples
+
+4) docker exec -it superset superset init
+

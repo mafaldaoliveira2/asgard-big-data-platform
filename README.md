@@ -61,12 +61,16 @@ You can check the [NiFi docs](https://nifi.apache.org/docs.html) or use [Apache 
 ### Setting Up
 **In the *Asgard Big Data Platform* project root:**
 
+1. Give execute permission to dev folder of Apache NiFi:
 ```bash
-# Give execute permission to dev folder of Apache NiFi
 chmod -R +x ./apache-nifi/dev
-# Build Apache NiFi customized image
+```
+2. Build Apache NiFi customized image:
+```bash
 ./apache-nifi/dev/build-apache-nifi-image.sh
-# Launch previous Apache NiFi customized built image 
+```
+3. Launch previous Apache NiFi customized built image:
+```bash
 ./apache-nifi/dev/launch-apache-nifi.sh
 ```
 
@@ -85,13 +89,17 @@ You can check the [HDFS docs](https://hadoop.apache.org/docs/r1.2.1/hdfs_design.
 ### Setting Up
 **In the *Asgard Big Data Platform* project root:**
 
+1. Give execute permission to dev folder of Hadoop:
 ```bash
-# Give execute permission to dev folder of hadoop
-chmod -R +x hadoop/dev/
-# Build hadoop customized image
-hadoop/dev/build-all-images.sh
-# Launch previous hadoop customized built image 
-hadoop/dev/launch-single-node-cluster.sh
+chmod -R +x ./hadoop/dev/
+```
+2. Build Hadoop customized images:
+```bash
+./hadoop/dev/build-all-images.sh
+```
+3. Launch previous Hadoop customized built images:
+```bash
+./hadoop/dev/launch-single-node-cluster.sh
 ```
 
 ### HDFS UI
@@ -111,12 +119,16 @@ You can check the [Presto documentation](https://prestodb.io/docs/current/) or u
 ### Setting Up
 **In the *Asgard Big Data Platform* project root:**
 
+1. Give execute permission to dev folder of Presto:
 ```bash
-# Give execute permission to dev folder of Presto
 chmod -R +x ./prestodb/dev
-# Build Presto customized image
+```
+2. Build Presto customized image:
+```bash
 ./prestodb/dev/build-presto-image.sh
-# Launch previous Presto customized built image 
+```
+3. Launch previous Presto customized built image:
+```bash
 ./prestodb/dev/launch-presto.sh
 ```
 
@@ -141,12 +153,15 @@ You can check the [Hue Installation Guide](http://cloudera.github.io/hue/docs-3.
 ### Setting Up
 **In the *Asgard Big Data Platform* project root:**
 
+1. Give execute permission to dev folder of Hue:
 ```bash
-# Give execute permission to dev folder of Hue
 chmod -R +x ./hue/dev
-# Launch Hue image
+```
+2. Launch Hue image
+```bash
 ./hue/dev/launch-hue.sh
 ```
+
 ### Hue UI
 - [http://127.0.0.1:8887/](http://127.0.0.1:8887/)
 
@@ -172,14 +187,96 @@ You can check the [Hive Getting Started Guide](https://cwiki.apache.org/confluen
 ### Setting Up
 **In the *Asgard Big Data Platform* project root:**
 
+1. Give execute permission to dev folder of Hive:
 ```bash
-# Give execute permission to dev folder of Hive
 chmod -R +x hive/dev/
-# Build Docker Images for Hive Metastore
+```
+2. Build Docker Images for Hive Metastore
+```bash
 ./hive/dev/build-all-images.sh
-# Launch Hive Metastore Containers. This will create a Hive Thrift Server and a MySQL server
+```
+3. Launch Hive Metastore Containers. This will create a Hive Thrift Server and a MySQL server
+```bash
 ./hive/dev/launch-hive-metastore.sh
 ```
+
+## Apache Superset
+> Modern data exploration and visualization platform.
+
+![](https://superset.apache.org/static/7fbdf913f3d6910fca780e9e5d0e0e7a/01620/worldbank_dashboard.png)
+
+### Overview
+Superset is fast, lightweight, intuitive, and loaded with options that make it easy for users of all skill sets to explore and visualize their data, from simple line charts to highly detailed geospatial charts.
+
+### Powerful yet easy to use
+Quickly and easily integrate and explore your data, using either our simple no-code viz builder or state of the art SQL IDE.
+
+### Integrates with modern databases
+Superset can connect to any SQL based datasource through SQLAlchemy, including modern cloud native databases and engines at petabyte scale.
+
+### Modern architecture
+Superset is lightweight and highly scalable, leveraging the power of your existing data infrastructure without requiring yet another ingestion layer.
+
+### Rich visualizations and dashboards
+Superset ships with a wide array of beautiful visualizations. Our visualization plug-in architecture makes it easy to build custom visualizations that drop directly into Superset.
+
+You can check the [Apache Superset Documentation](https://superset.apache.org/docs/intro) and all their [community](https://superset.apache.org/community) resources, including their [Apache Superset Slack Workspace](https://join.slack.com/t/apache-superset/shared_invite/zt-l5f5e0av-fyYu8tlfdqbMdz_sPLwUqQ).
+
+### Setting Up
+**In the *Asgard Big Data Platform* project root:**
+
+1. Give execute permission to dev folder of Apache Superset:
+```bash
+chmod -R +x ./apache-superset/dev
+```
+2. Build Docker Image for Apache Superset
+```bash
+./apache-superset/dev/build-apache-superset-image.sh
+```
+3. Launch previous built Apache Superset image
+```bash
+./apache-superset/dev/launch-apache-superset.sh
+```
+
+### Apache Superset UI
+- [http://127.0.0.1:8087/](http://127.0.0.1:8087/)
+
+### Apache Superset Configuration
+
+1. Setup your local admin account:
+```bash
+docker exec -it superset superset fab create-admin \
+               --username admin \
+               --firstname Superset \
+               --lastname Admin \
+               --email admin@superset.com \
+               --password admin
+```
+2. Migrate local DB to latest:
+```bash
+docker exec -it superset superset db upgrade
+```
+3. Load Examples (Optional):
+```bash
+docker exec -it superset superset load_examples
+```
+4. Setup roles:
+```bash
+docker exec -it superset superset init
+```
+4. Presto connection <bR/>
+Superset requires a Python DB-API database driver and a SQLAlchemy dialect to be installed for each datastore you want to connect to. The Apache Superset iamge previously build already installed [PyHive](https://pypi.org/project/PyHive/) connector for Presto, however you can check all [databases](https://superset.apache.org/docs/databases/
+) supported by Apache Superset and their [dependencies and drivers](https://superset.apache.org/docs/databases/installing-database-drivers).
+
+<p align="center">
+      <img src="https://github.com/mafaldaoliveira2/asgard-big-data-platform/blob/master/resources/presto_connection.png?raw=true" alt="Presto Connection" width="65%"/>
+</p>
+
+You can check your Presto IPAddress using the following command:
+```bash
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' presto
+```
+For this project, the catalog name used will be the <b>hive</b> catalog.
 
 ## Contributors
 <ul>

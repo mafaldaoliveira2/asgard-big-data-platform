@@ -32,6 +32,11 @@ MLOps Scale Machine Learning in the Enterprise
 ## Client entity
 <a href="https://www.ccg.pt/"><strong>Centro de Computação Gráfica - CCG </strong></a>
 
+## Architecture 
+<p align="center">
+      <img src="https://github.com/mafaldaoliveira2/asgard-big-data-platform/blob/master/resources/architecture.svg?raw=true" alt="Presto Connection" width="100%"/>
+</p>
+
 ## Apache NiFi
 > An easy to use, powerful, and reliable system to process and distribute data.
 

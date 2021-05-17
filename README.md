@@ -282,6 +282,25 @@ You can check your Presto IPAddress using the following command:
 docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' presto
 ```
 For this project, the catalog name used will be the <b>hive</b> catalog.
+## Apache ZooKeeper
+> A Distributed Coordination Service for Distributed Applications. It is simple, ordered and fast.
+
+### Overview
+It is designed to be easy to program to, and uses a data model styled after the familiar directory tree structure of file systems. It runs in Java and has bindings for both Java and C.ZooKeeper is an open source Apache project that provides a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services over large clusters in distributed systems.
+
+The goal is to make these systems easier to manage with improved, more reliable propagation of changes. 
+It follows a simple client-server model where clients are nodes that make use of the service, and servers are nodes that provide the service. ZooKeeper server can handle a large number of client connections at the same time.
+
+## Apache Kakfa
+>  A Distributed Streaming Platform.
+
+### Overview
+Kafka is an open source software which provides a framework for storing, reading and analysing streaming data. It is capable of handling trillions of events a day. 
+Shortly, Kafka is used for stream processing, website activity tracking, metrics collection and monitoring, log aggregation, real-time analytics, CEP, ingesting data into Spark, ingesting data into Hadoop, CQRS, replay messages, error recovery, and guaranteed distributed commit log for in-memory computing. 
+It is also often used for operational monitoring data. This involves aggregating statistics from distributed applications to produce centralized feeds of operational data.
+
+## Apache ZooKeeper and Apache Kafka
+Apache Kafka uses Apache ZooKeeper to store its metadata. Data such as the location of partitions and the configuration of topics are stored outside of Kafka itself, in a separate ZooKeeper cluster.
 
 ## Contributors
 <ul>
@@ -289,7 +308,7 @@ For this project, the catalog name used will be the <b>hive</b> catalog.
 <br />
 <li><a href="https://github.com/hugodscarvalho"><strong>Hugo Carvalho</strong></a></li>
 <br />
-<li><a href=""><strong>Inês Lopes</strong></a></li>
+<li><a href="https://github.com/InesLopes98"><strong>Inês Lopes</strong></a></li>
 <br />
 <li><a href="https://github.com/mafaldaoliveira2/"><strong>Mafalda Oliveira</strong></a></li>
 <br />

@@ -25,8 +25,6 @@
 MLOps Scale Machine Learning in the Enterprise
 
 ## Proponent
-<a href="http://www3.dsi.uminho.pt/pcortez/Home.html"><strong>Professor Paulo Cortez – DSI </strong></a>
-<br />
 <a href="https://pt.linkedin.com/in/apilastri"><strong>André Pilastri - CCG </strong></a>
 
 ## Client entity

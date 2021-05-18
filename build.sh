@@ -42,5 +42,6 @@ docker build --build-arg PRESTO_VERSION=0.251 -t asgard/prestodb:latest ./presto
 p9=$!
 docker build . -f spark/spark-hs.Dockerfile -t spark-hs:latest &
 p10=$!
-
-wait $p1 $p2 $p3 $p4 $p5 $p6 $p7 $p8 $p9 $p10
+docker build -t asgard/superset:latest ./apache-superset &
+p11=$!
+wait $p1 $p2 $p3 $p4 $p5 $p6 $p7 $p8 $p9 $p10 $p11

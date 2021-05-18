@@ -16,4 +16,5 @@
 #!/bin/bash
 DOCKER_IMAGE="asgard/nifi:1.13.2"
 echo "Running Docker Image: $DOCKER_IMAGE"
-sudo docker run -it -d -p 8080:8080 -p 8181:8181 --network hadoop --name nifi $DOCKER_IMAGE
+mkdir -p $PWD/apache-nifi/batch_data
+docker run -it -d -p 8080:8080 -p 8181:8181 -v $PWD/apache-nifi/batch_data:/opt/nifi/nifi-current/batch_data --network hadoop --name nifi3 $DOCKER_IMAGE

@@ -184,7 +184,7 @@ docker exec -it broker kafka-topics \
 > Spark is an open source processing tool, allowing sophisticated analysis. It is a 100% open source tool, hosted on the vendor-independent Apache Software Foundation.
 Using this tool, it is possible to create an execution environment serving as a basis for Big Data and Machine Learning, SQL data streaming and graph processing, among others.
 
-![](https://i1.wp.com/hadooptutorial.info/wp-content/uploads/2014/04/HDFS-Web-UI-1.png?w=1301)
+![](https://www.google.com/url?sa=i&url=https%3A%2F%2Fexperienceleague.adobe.com%2Fdocs%2Fexperience-platform%2Fdata-science-workspace%2Fjupyterlab%2Faccess-notebook-data.html%3Flang%3Dpt-BR&psig=AOvVaw0JpGAh2Ufqz0wC5DFU9huI&ust=1621973992441000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDssZCS4_ACFQAAAAAdAAAAABAQ)
 
 
 You can check the [Spark docs](https://spark.apache.org/docs/latest/) 
@@ -204,7 +204,7 @@ jupyter-spark/dev/launch-jupyter-spark.sh
 docker logs jupyter
 
 ```
-### HDFS UI
+### Jupyter UI
 - [http://127.0.0.1:8888/](http://127.0.0.1:8888/)
 - 
 ## Presto

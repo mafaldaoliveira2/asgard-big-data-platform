@@ -180,32 +180,47 @@ docker exec -it broker kafka-topics \
                --partitions 1 \
                --topic <topic-name>
 ```
-## Jupyter with Spark
-> Spark is an open source processing tool, allowing sophisticated analysis. It is a 100% open source tool, hosted on the vendor-independent Apache Software Foundation.
-Using this tool, it is possible to create an execution environment serving as a basis for Big Data and Machine Learning, SQL data streaming and graph processing, among others.
+## Spark
+> An open source processing tool, allowing sophisticated analysis.
 
 ![](https://experienceleague.adobe.com/docs/experience-platform/assets/write-dataset.png?lang=pt-BR)
 
+Spark is a 100% open source tool, hosted on the vendor-independent Apache Software Foundation.
+Using this tool, it is possible to create an execution environment serving as a basis for Big Data and Machine Learning, SQL data streaming and graph processing, among others.
 
-You can check the [Spark docs](https://spark.apache.org/docs/latest/) 
+You can check the [Spark docs](https://spark.apache.org/docs/latest/).
+
+In this project, the set up of this technology is done together with Jupyter Notebook. 
+
+## Jupyter Notebook
+> A web-based interactive computational environment for creating Jupyter notebook documents.
+
+![](https://raw.githubusercontent.com/mafaldaoliveira2/asgard-big-data-platform/master/resources/Jupyter.png)
+
+A Jupyter Notebook document is a JSON document, following a versioned schema, containing an ordered list of input/output cells which can contain code, text, mathematics, plots and rich media, usually ending with the ".ipynb" extension.
+
+A Jupyter Notebook can be converted to a number of open standard output formats, such as, HTML, LaTeX, PDF, Markdown, Python, etc. It can also be connected to many kernels to allow programming in different languages.
+
+You can check [Project Jupyter](https://jupyter.org/) where you can find all of the available documentation, and also a large community where you can explore projects, report vulnerabilities, and participate in online communication channels.
+
 ### Setting Up
 **In the *Asgard Big Data Platform* project root:**
 
-1. In the same location as before, give permissions to execute the scripts in the folder:
+1. Give execute permission to dev folder of Jupyter:
 ```bash
 chmod -R +x jupyter-spark/dev/
 ```
-2. Create a Jupyter Spark container:
+2. Create and launch Jupyter Spark container:
 ```bash
-jupyter-spark/dev/launch-jupyter-spark.sh
+./jupyter-spark/dev/launch-jupyter-spark.sh
 ```
-3. Go get the token to access jupyter by doing tha following step and paste the token in the Jupyter web page:
+3. Get the token to access Jupyter by doing:
 ```bash
 docker logs jupyter
-
 ```
 ### Jupyter UI
 - [http://127.0.0.1:8888/](http://127.0.0.1:8888/)
+
 
 ## Presto
 > Enables analytics on large amounts of data.

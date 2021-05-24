@@ -183,8 +183,6 @@ docker exec -it broker kafka-topics \
 ## Spark
 > An open source processing tool, allowing sophisticated analysis.
 
-![](https://experienceleague.adobe.com/docs/experience-platform/assets/write-dataset.png?lang=pt-BR)
-
 Spark is a 100% open source tool, hosted on the vendor-independent Apache Software Foundation.
 Using this tool, it is possible to create an execution environment serving as a basis for Big Data and Machine Learning, SQL data streaming and graph processing, among others.
 

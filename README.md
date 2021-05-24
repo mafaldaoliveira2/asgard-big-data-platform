@@ -180,7 +180,33 @@ docker exec -it broker kafka-topics \
                --partitions 1 \
                --topic <topic-name>
 ```
+## Jupyter with Spark
+> Spark is an open source processing tool, allowing sophisticated analysis. It is a 100% open source tool, hosted on the vendor-independent Apache Software Foundation.
+Using this tool, it is possible to create an execution environment serving as a basis for Big Data and Machine Learning, SQL data streaming and graph processing, among others.
 
+![](https://i1.wp.com/hadooptutorial.info/wp-content/uploads/2014/04/HDFS-Web-UI-1.png?w=1301)
+
+
+You can check the [Spark docs](https://spark.apache.org/docs/latest/) 
+### Setting Up
+**In the *Asgard Big Data Platform* project root:**
+
+1. In the same location as before, give permissions to execute the scripts in the folder:
+```bash
+chmod -R +x jupyter-spark/dev/
+```
+2. Create a Jupyter Spark container:
+```bash
+jupyter-spark/dev/launch-jupyter-spark.sh
+```
+3. Go get the token to access jupyter by doing tha following step and paste the token in the Jupyter web page:
+```bash
+docker logs jupyter
+
+```
+### HDFS UI
+- [http://127.0.0.1:8888/](http://127.0.0.1:8888/)
+- 
 ## Presto
 > Enables analytics on large amounts of data.
 

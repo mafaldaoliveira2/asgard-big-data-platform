@@ -15,7 +15,7 @@
     <a href="https://github.com/mafaldaoliveira2/asgard-big-data-platform/documentation"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a target="_blank" href="https://www.youtube.com/watch?v=P5swjkpxF8k">View Demo</a> -
+    <a href="https://www.youtube.com/watch?v=P5swjkpxF8k" target="_blank" rel="noopener noreferrer">View Demo</a> -
     <a href="https://github.com/mafaldaoliveira2/asgard-big-data-platform/issues">Report Bug</a> - 
     <a href="https://github.com/mafaldaoliveira2/asgard-big-data-platform/issues">Request Feature</a>
   </p>
